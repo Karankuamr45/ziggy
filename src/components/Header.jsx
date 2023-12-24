@@ -4,10 +4,11 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars ,faTimes } from '@fortawesome/free-solid-svg-icons';
 import logo from '../assets/png/whitelogo.png';
-import SearchBar from './SearchBar';
+// import SearchBar from './SearchBar';
 
 const Header = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
+  // const [toggleBtn,setToggleBtn]=useState('Login');
 
   const toggleMenu = () => {
     setMenuOpen(!isMenuOpen);
@@ -22,9 +23,9 @@ const Header = () => {
             <img src={logo} alt="" />
           </div>
 
-          <div className='mx-5 lg:mx-2'>
+          {/* <div className='mx-5 lg:mx-2'>
             <SearchBar/>
-          </div>
+          </div> */}
 
           {/* Hamburger Menu Icon */}
           <div  className="lg:hidden  cursor-pointer transition duration-300 ease-in-out transform hover:scale-110"
@@ -38,6 +39,13 @@ const Header = () => {
             <a href="#" className="text-white text-xl lg:text-3xl ">About</a>
             <a href="#" className="text-white text-xl lg:text-3xl ">Help</a>
             <a href="#" className="text-white text-xl lg:text-3xl ">Cart</a>
+
+            {/* For toggle functionality */}
+            {/* <button
+            onClick={()=>{
+            toggleBtn==='Login'?setToggleBtn('Logout') : setToggleBtn('Login')
+            }}
+            >{toggleBtn}</button> */}
           </nav>
         </div>
       </header>
