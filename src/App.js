@@ -7,6 +7,8 @@ import Carousel from './components/Carousel';
 import About from './components/About';
 import Help from './components/Help';
 import Dummy2 from './components/Dummy2'
+import { createBrowserRouter,RouterProvider,Outlet } from 'react-router-dom';
+import PageNotFound from './components/PageNotFound';
 
 // https://ziggy-sooty.vercel.app/
 
@@ -16,21 +18,43 @@ const AppLayout=()=>{
         <div>
             <Header/>
             {/* <Carousel/> */}
-            <Body/>
+            <Outlet/>
             <Footer/>
 
             {/* <Dummy2/> this is for filter imp */}
-
-            {/* <About/> */}
-
-            {/* <Help/> */}
         </div>
     )
 }
 
 
+const  appRouter=createBrowserRouter([
+    {
+        path:'/',
+        element:<AppLayout/>,
+        children:[
+            {
+                path:'/',
+                element:<Body/>
+            },
+            {
+                path:'/about',
+                element:<About/>
+            },
+            {
+                path:'/help',
+                element:<Help/>
+            },
+
+        ],
+        errorElement:<PageNotFound/>
+
+    },
+    
+])
+
+
 const root=ReactDOM.createRoot(document.getElementById('root'));
-root.render(<AppLayout/>)
+root.render(<RouterProvider router={appRouter}/>)
 
 
 

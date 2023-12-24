@@ -1,13 +1,13 @@
-// Header.js
-
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars ,faTimes } from '@fortawesome/free-solid-svg-icons';
 import logo from '../assets/png/whitelogo.png';
+import { Link ,NavLink } from 'react-router-dom';
 // import SearchBar from './SearchBar';
 
 const Header = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
+  
   // const [toggleBtn,setToggleBtn]=useState('Login');
 
   const toggleMenu = () => {
@@ -35,10 +35,19 @@ const Header = () => {
           
           {/* Large Screen Navigation Links */}
           <nav className="hidden lg:flex space-x-4 lg:space-x-14">
-            <a href="#" className="text-white text-xl lg:text-3xl ">Home</a>
+
+            <NavLink  to="/" className="text-white text-xl lg:text-3xl" exact activeClassName="active">Home</NavLink >
+            <NavLink to="/about" className="text-white text-xl lg:text-3xl" activeClassName="active">About</NavLink>
+            <NavLink to="/help" className="text-white text-xl lg:text-3xl " activeClassName="active">Help</NavLink>
+            <NavLink to="/cart" className="text-white text-xl lg:text-3xl " activeClassName="active">Cart</NavLink>
+
+
+          
+            
+            {/* <a href="#" className="text-white text-xl lg:text-3xl ">Home</a>
             <a href="#" className="text-white text-xl lg:text-3xl ">About</a>
             <a href="#" className="text-white text-xl lg:text-3xl ">Help</a>
-            <a href="#" className="text-white text-xl lg:text-3xl ">Cart</a>
+            <a href="#" className="text-white text-xl lg:text-3xl ">Cart</a> */}
 
             {/* For toggle functionality */}
             {/* <button
@@ -51,12 +60,18 @@ const Header = () => {
       </header>
 
       {/* Responsive Navigation Links */}
-      <nav className={`lg:hidden bg-gray-800 text-white p-4 ${isMenuOpen ? 'block' : 'hidden'} transition-all duration-1000 ease-in-out`}>
+      <nav className={`lg:hidden bg-gray-800 text-white p-4 ${isMenuOpen ? 'block' : 'hidden'}`}>
       <div className="flex flex-col items-center">
-          <a href="#" className="block py-2">Home</a>
+
+      <NavLink to="/" className="block py-2" onClick={toggleMenu} activeClassName="active">Home</NavLink>
+      <NavLink to="/about" className="block py-2" onClick={toggleMenu} activeClassName="active">About</NavLink>
+      <NavLink to="/help" className="block py-2" onClick={toggleMenu} activeClassName="active">Help</NavLink>
+      <NavLink to="/cart" className="block py-2" onClick={toggleMenu} activeClassName="active">Cart</NavLink>
+
+          {/* <a href="#" className="block py-2">Home</a>
           <a href="#" className="block py-2">About</a>
           <a href="#" className="block py-2">Services</a>
-          <a href="#" className="block py-2">Contact</a>
+          <a href="#" className="block py-2">Contact</a> */}
         </div>
       </nav>
     </div>

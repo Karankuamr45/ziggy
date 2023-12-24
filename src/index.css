@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* styles.css or your Tailwind CSS classes */
+.active {
+    color: blue; /* Change the color to your preferred active link color */
+    text-decoration: underline; /* Add an underline to the active link */
+  }
+  

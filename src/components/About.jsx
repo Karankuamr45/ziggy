@@ -3,9 +3,9 @@ import Footer from './Footer';
 
 const About = () => {
   return (
-    <div className="bg-gray-100">
+    <div className="bg-gray-100 mt-10">
       {/* Header */}
-      <header className="bg-gray-800 text-white py-12">
+      <header className="bg-white text-black py-12">
         <div className="container mx-auto text-center">
           <h1 className="text-4xl font-bold mb-4">About Us</h1>
           <p className="text-lg">
@@ -117,8 +117,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Footer */}
-    <Footer/>
     </div>
   );
 };

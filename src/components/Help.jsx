@@ -118,7 +118,7 @@ const faqData = [
   return (
    <> <div className="container mx-auto  py-8 ">
       
-      <h1 className="text-3xl font-bold m-4  p-auto bg-gray-800 text-white text-center h-16">Help Center</h1>
+      <h1 className="text-3xl font-bold m-4  p-auto bg-white text-black text-center h-16">Help Center</h1>
       <p className="text-gray-600 mb-8">Welcome to our help center. Find answers to frequently asked questions below.</p>
 
       {/* Add your dummy content here */}
@@ -131,7 +131,7 @@ const faqData = [
 
           {
             faqData.map(item=>(
-              <div className='mb-10'><FaqAccordion  key={item.id} data={item}/></div>
+              <div className='mb-10'  key={item.id} ><FaqAccordion data={item}/></div>
             ))
           }
           {/* Add more FAQs as needed */}
@@ -143,7 +143,6 @@ const faqData = [
 
 
     </div>
-    <Footer/>
     </>
   );
 };
