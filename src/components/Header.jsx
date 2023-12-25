@@ -36,10 +36,10 @@ const Header = () => {
           {/* Large Screen Navigation Links */}
           <nav className="hidden lg:flex space-x-4 lg:space-x-14">
 
-            <NavLink  to="/" className="text-white text-xl lg:text-3xl" exact activeClassName="active">Home</NavLink >
-            <NavLink to="/about" className="text-white text-xl lg:text-3xl" activeClassName="active">About</NavLink>
-            <NavLink to="/help" className="text-white text-xl lg:text-3xl " activeClassName="active">Help</NavLink>
-            <NavLink to="/cart" className="text-white text-xl lg:text-3xl " activeClassName="active">Cart</NavLink>
+            <NavLink  to="/" className="text-white text-xl lg:text-3xl  "  >Home</NavLink >
+            <NavLink to="/about" className="text-white text-xl lg:text-3xl " >About</NavLink>
+            <NavLink to="/help" className="text-white text-xl lg:text-3xl  " >Help</NavLink>
+            <NavLink to="/cart" className="text-white text-xl lg:text-3xl  " >Cart</NavLink>
 
 
           
@@ -63,10 +63,10 @@ const Header = () => {
       <nav className={`lg:hidden bg-gray-800 text-white p-4 ${isMenuOpen ? 'block' : 'hidden'}`}>
       <div className="flex flex-col items-center">
 
-      <NavLink to="/" className="block py-2" onClick={toggleMenu} activeClassName="active">Home</NavLink>
-      <NavLink to="/about" className="block py-2" onClick={toggleMenu} activeClassName="active">About</NavLink>
-      <NavLink to="/help" className="block py-2" onClick={toggleMenu} activeClassName="active">Help</NavLink>
-      <NavLink to="/cart" className="block py-2" onClick={toggleMenu} activeClassName="active">Cart</NavLink>
+      <NavLink to="/" className="block py-2 " onClick={toggleMenu} >Home</NavLink>
+      <NavLink to="/about" className="block py-2 " onClick={toggleMenu} >About</NavLink>
+      <NavLink to="/help" className="block py-2 " onClick={toggleMenu} >Help</NavLink>
+      <NavLink to="/cart" className="block py-2 " onClick={toggleMenu} >Cart</NavLink>
 
           {/* <a href="#" className="block py-2">Home</a>
           <a href="#" className="block py-2">About</a>
