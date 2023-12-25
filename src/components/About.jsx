@@ -1,6 +1,3 @@
-import React from 'react';
-import Footer from './Footer';
-
 const About = () => {
   return (
     <div className="bg-gray-100 mt-10">
@@ -15,7 +12,7 @@ const About = () => {
         </div>
       </header>
 
-      {/* Mission and Vision */}
+    {/* Mission and Vision */}
       <section className="py-16">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -92,9 +89,6 @@ const About = () => {
               <h3 className="text-xl font-bold mb-2">John Doe</h3>
               <p className="text-gray-700">Founder & CEO</p>
             </div>
-
-
-
           </div>
         </div>
       </section>

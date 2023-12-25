@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars ,faTimes } from '@fortawesome/free-solid-svg-icons';
 import logo from '../assets/png/whitelogo.png';
-import { Link ,NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 // import SearchBar from './SearchBar';
 
 const Header = () => {
@@ -41,14 +41,6 @@ const Header = () => {
             <NavLink to="/help" className="text-white text-xl lg:text-3xl  " >Help</NavLink>
             <NavLink to="/cart" className="text-white text-xl lg:text-3xl  " >Cart</NavLink>
 
-
-          
-            
-            {/* <a href="#" className="text-white text-xl lg:text-3xl ">Home</a>
-            <a href="#" className="text-white text-xl lg:text-3xl ">About</a>
-            <a href="#" className="text-white text-xl lg:text-3xl ">Help</a>
-            <a href="#" className="text-white text-xl lg:text-3xl ">Cart</a> */}
-
             {/* For toggle functionality */}
             {/* <button
             onClick={()=>{
@@ -67,11 +59,6 @@ const Header = () => {
       <NavLink to="/about" className="block py-2 " onClick={toggleMenu} >About</NavLink>
       <NavLink to="/help" className="block py-2 " onClick={toggleMenu} >Help</NavLink>
       <NavLink to="/cart" className="block py-2 " onClick={toggleMenu} >Cart</NavLink>
-
-          {/* <a href="#" className="block py-2">Home</a>
-          <a href="#" className="block py-2">About</a>
-          <a href="#" className="block py-2">Services</a>
-          <a href="#" className="block py-2">Contact</a> */}
         </div>
       </nav>
     </div>

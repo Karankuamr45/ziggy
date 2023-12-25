@@ -12,9 +12,6 @@ const BodyShimmer=()=>{
        
         <div className="flex justify-center items-center flex-wrap gap-8 mx-3">
 
-
-            
-
             <ShimmerCard/>
             <ShimmerCard/>
             <ShimmerCard/>

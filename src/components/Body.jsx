@@ -2,28 +2,21 @@ import { useEffect, useState } from "react";
 import RestaurantCard from "./RestaurantCard";
 import ScrollToTopButton from "./ScrollToTopButton";
 import BodyShimmer from "./BodyShimmer";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
-
 
 const Body=()=>{
 
     const [filterList,setFilterList]=useState([]);
     const [searchfilterList,setsearchfilterList]=useState([]);
-
     const [searchTxt,setsearchTxt]=useState('')
-
-
-    
 
     useEffect(()=>{
         fetchData()
 
-    },[])
+    },[]);
 
     const fetchData=async()=>{
        
-            const data= await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7100319&lng=77.2603927&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING');
+        const data= await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7100319&lng=77.2603927&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING');
         const json= await data.json()
         console.log(json)
         const Restaurants=json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
@@ -31,11 +24,7 @@ const Body=()=>{
         setsearchfilterList(Restaurants)
         console.log(Restaurants)
       
-    }
-
-
-
-    
+    };
 
     const handleClick=()=>{
         const filtered=filterList.filter(
@@ -43,14 +32,15 @@ const Body=()=>{
         )
 
         setsearchfilterList(filtered)
-    }
+    };
 
     if(filterList.length===0){
         return <BodyShimmer/>
-    }
-   
+    };
+
     // return filterList.length===0 ? <BodyShimmer/> : (
-        return(
+
+    return(
         <div className="my-10">
 
             <div className="text-center">
@@ -63,7 +53,6 @@ const Body=()=>{
     e.preventDefault()
   }}>
   <div className="flex items-center bg-white p-2 rounded-md h-8">
-      {/* <FontAwesomeIcon icon={faSearch} className="text-gray-500 mr-2" /> */}
       <input
         type="text"
         placeholder="Search..."
@@ -104,9 +93,7 @@ const Body=()=>{
                 {searchfilterList.map(item =>(
                     <RestaurantCard key={item.info.id} data={item}/>
                     ))}
-                  
-               
-           
+
             </div>
 
         </div>

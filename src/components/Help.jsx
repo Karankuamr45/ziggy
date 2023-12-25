@@ -138,10 +138,6 @@ const faqData = [
         </div>
       </section>
 
-      
-
-
-
     </div>
     </>
   );

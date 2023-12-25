@@ -5,7 +5,6 @@ import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 
 const FaqAccordion = ({data}) => {
   const {question,answer}=data
-  // console.log(data)
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleAccordion = () => {
