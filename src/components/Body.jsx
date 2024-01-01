@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import RestaurantCard from "./RestaurantCard";
 import ScrollToTopButton from "./ScrollToTopButton";
-import BodyShimmer from "./BodyShimmer";
+
 
 const Body=()=>{
 
@@ -18,11 +18,11 @@ const Body=()=>{
        
         const data= await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7100319&lng=77.2603927&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING');
         const json= await data.json()
-        console.log(json)
-        const Restaurants=json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+        // console.log(json)
+        const Restaurants=json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
         setFilterList(Restaurants)
         setsearchfilterList(Restaurants)
-        console.log(Restaurants)
+        // console.log(Restaurants)
       
     };
 
@@ -34,9 +34,9 @@ const Body=()=>{
         setsearchfilterList(filtered)
     };
 
-    if(filterList.length===0){
-        return <BodyShimmer/>
-    };
+    // if(filterList.length===0){
+    //     return <BodyShimmer/>
+    // };
 
     // return filterList.length===0 ? <BodyShimmer/> : (
 
