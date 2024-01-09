@@ -16,12 +16,12 @@ const Body=()=>{
 
     const fetchData=async()=>{
        
-        const data= await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7100319&lng=77.2603927&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING');
-        const json= await data.json()
-        // console.log(json)
-        const Restaurants=json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-        setFilterList(Restaurants)
-        setsearchfilterList(Restaurants)
+        const data = await fetch('https://ziggyback.onrender.com/restaurants');
+        const json = await data?.json()
+        console.log(json)
+        const Restaurants=json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+        setFilterList(json)
+        setsearchfilterList(json)
         // console.log(Restaurants)
       
     };
@@ -91,7 +91,8 @@ const Body=()=>{
             <div className="flex justify-center items-center flex-wrap gap-8 mx-3">
 
                 {searchfilterList.map(item =>(
-                    <RestaurantCard key={item.info.id} data={item}/>
+                    // console.log(item)
+                    <RestaurantCard key={item?._id} data={item}/>
                     ))}
 
             </div>
